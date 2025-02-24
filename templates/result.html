@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <style>
+        /* Modern background with neon glow */
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white; 
+            text-align: center; 
+            padding: 50px; 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 { 
+            color: #00d4ff; 
+        }
+
+        /* Glassmorphism result box */
+        .result-box { 
+            padding: 20px; 
+            border-radius: 10px; 
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            display: inline-block; 
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        p { 
+            font-size: 20px; 
+        }
+
+        /* Stylish button */
+        a { 
+            color: #00d4ff; 
+            text-decoration: none; 
+            font-size: 18px; 
+            margin-top: 20px; 
+            display: inline-block; 
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover { 
+            background: linear-gradient(90deg, #0056b3, #0094cc);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 122, 255, 0.7);
+        }
+
+        /* Smooth fade-in effect */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade-in">✅ Analysis Result</h1>
+    <div class="result-box fade-in">
+        <p id="prediction"></p>
+    </div>
+    <br><br>
+    <a href="index.html">🔙 Go Back</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const prediction = urlParams.get("prediction");
+        document.getElementById("prediction").innerText = `Result: ${prediction}`;
+    </script>
+</body>
+</html>
